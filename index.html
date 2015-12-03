@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Validate</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/zs-validate.css">
+    <link rel="stylesheet" href="css/animate/animate.css">
+    <style type="text/css">
+        .validate-content {
+            margin-top: 100px;
+        }
+
+        .formItem {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <h1 class="container">Bootstrap Validate
+        <small>for Html5</small>
+    </h1>
+</header>
+
+<section class="container validate-content">
+
+
+</section>
+
+<div id="form" class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">必填</span>
+                <input type="text" class="form-control" id="required" data-zs-validate="required"
+                       data-zs-validate-trigger="blur" data-zs-validate-placement="top" placeholder="必填">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">整数</span>
+                <input type="number" class="form-control" id="digits" data-zs-validate="digits" placeholder="整数">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">自然数</span>
+                <input type="number" class="form-control" id="naturalnum" data-zs-validate="naturalnum"
+                       placeholder="自然数">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">字母</span>
+                <input type="text" class="form-control" id="stringEN" data-zs-validate="stringEN" placeholder="字母">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">字母数字</span>
+                <input type="text" class="form-control" id="alnum" data-zs-validate="alnum" placeholder="字母数字">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">身份证</span>
+                <input type="number" class="form-control" id="idcardno" data-zs-validate="idcardno" placeholder="身份证">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">邮政编码</span>
+                <input type="number" class="form-control" id="postalcode" data-zs-validate="postalcode"
+                       placeholder="邮政编码">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">邮箱</span>
+                <input type="text" class="form-control" id="email" data-zs-validate="required , email" placeholder="邮箱">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">端口</span>
+                <input type="number" class="form-control" id="port" data-zs-validate="port" placeholder="端口">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">IP地址</span>
+                <input type="text" class="form-control" id="ip" data-zs-validate="ip" placeholder="IP地址">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">url</span>
+                <input type="text" class="form-control" id="url" data-zs-validate="url" placeholder="url">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">移动电话</span>
+                <input type="number" class="form-control" id="mobile" data-zs-validate=" required, mobile"
+                       placeholder="移动电话">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">rangelength</span>
+                <input type="text" class="form-control" id="rangelength"
+                       data-zs-validate="required,rangelength:[6-6],digits" placeholder="rangelength">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 formItem">
+            <div class="input-group">
+                <span class="input-group-addon">equalTo</span>
+                <input type="text" class="form-control" id="equalTo"
+                       data-zs-validate=" required,rangelength:6-6,digits,equalTo:#rangelength" placeholder="equalTo">
+                <span class="input-group-addon" onclick="validate(this);">检查</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button id="check" class="btn btn-block btn-info">验证</button>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="lib/jQuery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="js/zs-validate.js"></script>
+<script>
+
+    function validate(element) {
+        zs.validateCheck($(element).parent().find("input"), true);
+    }
+
+    $("#check").click(function (e) {
+        zs.validateCheck("#form [data-zs-validate]", true);
+    });
+
+</script>
+</html>

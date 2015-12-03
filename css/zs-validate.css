@@ -1,0 +1,19 @@
+/**用于zs校验框架使用**/
+
+[data-zs-validate] + div.tooltip > div.tooltip-inner {
+    background-color: rgba(230, 20, 20, 0.8);
+}
+
+[data-zs-validate] + div.tooltip > div.tooltip-arrow {
+    border-top-color: rgba(230, 20, 20, 0.8);
+}
+
+.zs-validate-invalid::-moz-placeholder {
+    color: #CC3333;
+    opacity: .8;
+}
+
+.zs-validate-invalid::-webkit-input-placeholder {
+    color: #CC3333;
+    opacity: .8;
+}
